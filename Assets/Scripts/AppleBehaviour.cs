@@ -67,7 +67,7 @@ public class AppleGame : MonoBehaviour
     {
         while (true)
         {
-            float nextGoldenChange = Random.Range(5f, 15f);
+            float nextGoldenChange = Random.Range(2f, 6f);
             Debug.Log("Next golden apple in: " + nextGoldenChange + " seconds");
             yield return new WaitForSeconds(nextGoldenChange);
 
@@ -134,7 +134,7 @@ public class AppleGame : MonoBehaviour
         Debug.Log("Apple reverted to red after quick flash.");
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         if (goldenTimerCoroutine != null)
         {
