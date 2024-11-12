@@ -20,15 +20,16 @@ public class TimerScript : MonoBehaviour
             timerText.SetText("Time: " + TimerString);
             if (timer <= 0)
             {
-                counting = false;
                 EndGame();
             }
         }
                 
     }
 
-    void EndGame()
+    public void EndGame()
     {
+        counting = false;
+        timer = 60.0f;
         mainScript.GameOver();
     }
 }

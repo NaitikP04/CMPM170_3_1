@@ -8,6 +8,7 @@ public class AppleGame : MonoBehaviour
     public GameObject apple;
     public TextMeshProUGUI scoreText;
     public GameObject restartButton; // Reference to the Restart Button
+    public TimerScript timeScript;
 
     private int score = 0;
     private bool isGolden = false;
@@ -34,7 +35,7 @@ public class AppleGame : MonoBehaviour
         if (isMouseOverApple && !isGolden)
         {
             Debug.Log("Game Over - Mouse touched apple while it was red.");
-            GameOver();
+            timeScript.EndGame();
         }
         else if (isMouseOverApple && isGolden && Input.GetMouseButtonDown(0))
         {
@@ -104,7 +105,7 @@ public class AppleGame : MonoBehaviour
                 if (!playerHoveredDuringGolden)
                 {
                     Debug.Log("Player failed to click golden apple in time. Game Over.");
-                    GameOver();
+                    timeScript.EndGame();
                 }
                 else
                 {
